@@ -1,0 +1,10 @@
+<div style="text-align: center">
+  <h1>What is the capital of {{ country }}?</h1>
+
+  <form method="post" action="{% url 'check_guess' %}">
+    {% csrf_token %}
+    <input type="hidden" name="country" value="{{ country }}" />
+    <input type="text" name="guess" />
+    <button type="submit">Submit</button>
+  </form>
+</div>
